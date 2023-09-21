@@ -1,0 +1,48 @@
+.support-main-div {
+  background-color: rgb(250, 250, 250);
+  /* height: 50vh; */
+}
+/* .support-main-header{
+
+} */
+.card-image {
+  width: 50% !important;
+  height: auto !important;
+}
+.cart-main-card {
+  margin-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+  max-width: 100% !important;
+}
+.card-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-resturent-address {
+  text-align: center;
+  font-weight: bold;
+}
+.cart-locationmark {
+  color: rgb(221, 153, 51);
+}
+.cart-card-line {
+  color: gray;
+  height: 3px;
+  background-color: gray;
+}
+.cart-card-btn {
+  display: flex;
+  justify-content: center;
+  padding: 25px 10px 30px 10px;
+}
+.cart-cardbtncallnow {
+  border: 3px solid goldenrod !important;
+  color: goldenrod !important;
+}
+
+.cart-cardbtnmsg {
+  background-color: goldenrod !important;
+  color: white !important;
+  border: 1px solid goldenrod !important;
+}

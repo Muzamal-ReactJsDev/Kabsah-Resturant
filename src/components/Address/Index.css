@@ -1,0 +1,120 @@
+.address-starting-icon {
+  font-size: 18px !important;
+}
+.Address-main-div {
+  background-color: rgb(250, 250, 250);
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+.adress-map-content {
+  background-color: white;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.address-map-icon {
+  margin-bottom: 3px;
+}
+/* .address-card-main-box {
+} */
+.address-card-row {
+  border-radius: 12px;
+  background-color: rgb(244, 247, 252);
+  height: 100px;
+  padding: 5px;
+  position: relative;
+}
+.address-main-icon {
+  display: flex;
+  align-items: center;
+  width: 4%;
+}
+.address-icon {
+  font-size: 18px;
+}
+.address-card-box {
+  display: flex;
+  align-items: center;
+}
+.address-content-location {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0px;
+  width: 65% !important;
+}
+.address-location {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100% !important;
+  margin: 0px;
+}
+.address-naming {
+  color: gray;
+}
+.Address-dot-icon-main {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 25% !important;
+}
+.Address-dot-icon {
+  float: right;
+}
+.address-icon {
+  font-size: 20px;
+}
+.ThreeDot-icon {
+  /* position: relative; */
+  font-size: 20px;
+}
+
+/* this is for the Edit and delete PopUp */
+
+.Three-dot-menu {
+  position: absolute;
+  top: 80%;
+  width: 130px;
+  right: 8%;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.Three-dot-edit-button,
+.Three-dot-delete-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.Three-dot-edit-button:hover,
+.Three-dot-delete-button:hover {
+  background-color: lightgray;
+}
+/*  */
+.address-faPlus-screen {
+  position: absolute;
+  right: 8%;
+  top: 80%;
+  width: 65px;
+  border-radius: 50%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(221, 153, 51);
+  border: 1px solid whitesmoke;
+}
+.address-plus-whole-screen {
+  align-items: center;
+  font-size: 14px;
+  display: flex;
+  color: white;
+  justify-content: center;
+}

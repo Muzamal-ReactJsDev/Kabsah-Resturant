@@ -1,0 +1,25 @@
+.VerifyBtn {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(221, 153, 51) !important;
+  font-weight: bold;
+  border: none;
+}
+.code-input-container {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.verification-Input-style {
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 8px;
+}
+.ResendBtn{
+  border-radius: 10px;
+  background-color: rgb(221, 153, 51) !important;
+  font-weight: bold;
+  border: none;
+}

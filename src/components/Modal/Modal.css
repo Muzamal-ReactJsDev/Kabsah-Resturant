@@ -1,0 +1,115 @@
+/* Center the modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content-wrapper {
+  max-height: 80vh; /* Adjust the value as needed */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.modal-content-wrapper::-webkit-scrollbar {
+  width: 0.5em;
+}
+.modal-main-row {
+  padding: 15px;
+}
+.modal-cross {
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+/* Customize the modal size if needed */
+.modal-dialog {
+  max-width: 600px;
+  width: 90%;
+}
+.modal-image-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Style the modal image */
+.modal-image {
+  border-radius: 15px;
+  max-width: 200px;
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+  /* width: 100%;
+  height: auto; */
+}
+/* Style the modal information */
+.modal-info {
+  font-weight: bold;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* justify-content: center; */
+  align-items: flex-start;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+/* Style the modal icons column */
+.Modal-icons-col {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* Style the quantity buttons */
+.quantity {
+  display: flex;
+  align-items: center;
+  /* margin-top: 10px; */
+}
+.quantity span {
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  /* margin: 0 5px; */
+}
+/* Style the modal description */
+.modal-desc-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.modal-desc-para {
+  margin: 0px 0px 4px 0px !important;
+}
+/* Style the modal amount */
+.modal-amount {
+  font-size: 15px;
+  font-weight: bold;
+}
+.sandwich-icons-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sandwich-icons-heart-modal {
+  color: rgb(221, 153, 51);
+}
+/* Modal Button */
+.modal-button-row {
+  padding: 15px;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+}
+.modal-button {
+  width: 100% !important;
+  background-color: rgb(221, 153, 51) !important;
+  border: none;
+}

@@ -1,0 +1,36 @@
+.vertical-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-text {
+  margin-left: 10px;
+}
+
+/*  */
+.right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-content i {
+  margin-top: 10px;
+}

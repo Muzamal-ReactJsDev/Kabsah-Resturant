@@ -1,0 +1,46 @@
+.Inbox-main-div{
+  background-color: rgb(250, 250, 250);
+  height: 50vh;
+}
+/* .Inbox-main-Col{
+  
+} */
+.Inbox-sub-row{
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+.Inbox-left-column{
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inbox-image{
+  max-width: 140px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.Inbox-value-main{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.Inbox-value-name{
+  margin-bottom: 0px!important;
+}
+
+.Inbox-right{
+  justify-content: end;
+  align-items: center;
+  display: flex;
+  /* flex-direction: column; */
+}
+.Inbox-timeS{
+  float: right !important;
+}
+.inbox-para-slot{
+
+  margin-bottom: 0px !important;
+}

@@ -1,0 +1,63 @@
+.wallet-main-div-wallet{
+  background-color: rgb(250, 250, 250);
+  height: 100vh !important;
+  z-index: 0;
+}
+/* .muzamal{
+  position: relative;
+} */
+.walletmain{
+  font-size: 28px;
+}
+.walletDelete{
+  color: red;
+  font-size: 28px;
+}
+.wallet-main-col-wallet{
+  /* position: relative; */
+  background-color: rgb(244, 247, 252);
+  border-radius: 10px;
+}
+.wallet-main-row-wallet{
+  /* position: relative; */
+  padding: 10px;
+}
+.wallet-icon-wallet{
+  display: flex;
+  align-items: center;
+  width: 10% !important;
+}
+.wallet-name-details{
+  display: flex;
+  align-items: center;
+  width: 64% !important;
+}
+.wallet-delete-icon{
+  width: 26% !important;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+/*  */
+.wallet-faPlus-screen{
+  /* position: fixed; */
+  position:absolute;
+  right: 0%;
+  top: 230%;
+  width: 65px;
+  border-radius: 50%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(221, 153, 51);
+  border: 1px solid whitesmoke;
+}
+.wallet-plus-whole-screen{
+align-items: center;
+font-size: 14px;
+display: flex;
+color: white;
+justify-content: center;
+}

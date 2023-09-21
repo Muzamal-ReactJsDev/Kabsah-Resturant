@@ -1,0 +1,17 @@
+.for-google-address{
+background-color: rgb(244, 247, 252) !important;
+    color: black;
+    border: 1px solid lightgray !important;
+    margin: 4px;
+}
+.for-google-address.active{
+    background-color: rgb(221, 153, 51) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.for-google-address:focus{
+    background-color: rgb(221, 153, 51) !important;
+    color: white !important;
+    border: none !important;
+}

@@ -1,0 +1,51 @@
+.foot-main {
+  background-color: pink;
+}
+.resturant-name {
+  color: goldenrod;
+  font-weight: bolder;
+}
+.newsletter-name {
+  font-weight: bold;
+}
+.foot-input-group {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100% !important;
+}
+
+.foot-input-text {
+  padding: 15px;
+  border: none !important;
+  border-radius: 5px;
+  width: 80% !important;
+}
+.foot-input-group :focus {
+  border: none !important;
+  outline-offset: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.foot-input-button {
+  position: absolute;
+  background-color: rgb(221, 153, 51);
+  right: 22%;
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  top: 5px;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+.foot-Heading {
+  font-weight: bold;
+}
+.foot-link-foot {
+  text-decoration: none;
+  color: black !important;
+}

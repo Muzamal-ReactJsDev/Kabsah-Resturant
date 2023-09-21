@@ -1,0 +1,20 @@
+.fixed-button {
+    position: fixed;
+    bottom: 10px; /* Adjust the position as per your requirements */
+    right: 0px; /* Adjust the position as per your requirements */
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .fixed-button-button {
+    background-color: rgb(221, 153, 51);
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,13 @@
+.react-autosuggest__input {
+  border: none;
+  border-radius: 5px;
+  padding: 0px 12px;
+  height: 45px;
+  width: 100%;
+}
+
+.react-autosuggest__input:focus-visible{
+  border: none;
+outline-offset: none;
+outline: none;
+}

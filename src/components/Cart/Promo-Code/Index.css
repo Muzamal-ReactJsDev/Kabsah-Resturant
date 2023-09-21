@@ -1,0 +1,26 @@
+.cart-promo-input{
+    padding: 15px;
+    height: 50px;
+    box-shadow: none !important;
+    border: none;
+}
+.cart-promo-input:focus{
+    box-shadow: none !important;
+    border: none;
+}
+.cart-promo-button{
+    width: 100px;
+    background-color:goldenrod;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    outline-color: none;
+}
+.cart-promo-button:hover{
+    background-color: goldenrod;
+    outline: none;
+    color: white;
+}
+.cart-promo-button:active{
+    background-color:goldenrod!important;
+}
