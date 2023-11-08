@@ -1,230 +1,142 @@
-// import React, { useState } from "react";
-// import { Container, Row, Col } from "react-bootstrap";
-// import "./Index.css";
-// import { FaHome } from "react-icons/fa";
-// import { RiMap2Fill } from "react-icons/ri";
-// import { BsThreeDots } from "react-icons/bs";
-// import Header from "../Header/Index";
-// import { FaPlus } from "react-icons/fa";
-// import { Link } from "react-router-dom";
-// import Foot from "../Foot/Index";
-// const Index = (props) => {
-//   const [isMenuVisible, setMenuVisible] = useState(false);
-//   const myaddress = "Address";
-//   const toggleMenu = () => {
-//     setMenuVisible(!isMenuVisible);
-//   };
-//   const address = [
-//     {
-//       Home: (
-//         <div>
-//           <FaHome className="address-starting-icon" />
-//         </div>
-//       ),
-//       Name: "Home",
-//       Location: "Quaid-i-Azam Campus Lahore, Lahore Punjab,Pakistan",
-//       AddressIcon: (
-//         <span className="adress-map-content">
-//           <RiMap2Fill className="address-map-icon" />
-//         </span>
-//       ),
-//       ThreeDotIcon: <BsThreeDots className="ms-lg-3 ms-md-3 m-0" />,
-//     },
-//   ];
-//   return (
-//     <>
-//       <div className="Address-main-div">
-//         <div>
-//           <Header myaddress={myaddress} />
-//         </div>
-//         <br />
-//         <br />
-//         <br />
-
-//         <Container className="address-main">
-//           <Row className="address-main-row">
-//             {address.map((value, index) => {
-//               return (
-//                 <>
-//                   <Col className="address-card-main-box">
-//                     <Row className="address-card-row">
-//                       <Col xs={1} className="address-main-icon">
-//                         <span>{value.Home}</span>
-//                       </Col>
-//                       <Col xs={8} className="address-card-box">
-//                         <div className="address-content-location">
-//                           <h7 className="address-naming">{value.Name}</h7>
-//                           <br />
-//                           <h7 className="address-location ">
-//                             {value.Location}
-//                           </h7>
-//                         </div>
-//                       </Col>
-//                       <Col xs={3} className="Address-dot-icon-main p-0">
-//                         <div className="Address-dot-icon">
-//                           <span className="address-icon">
-//                             {value.AddressIcon}
-//                           </span>
-//                           <span
-//                             className="ThreeDot-icon ms-lg-1 ms-md-1 m-0 "
-//                             onClick={toggleMenu}
-//                           >
-//                             {value.ThreeDotIcon}
-//                           </span>
-//                           {isMenuVisible && (
-//                             <div className="Three-dot-menu">
-//                               <button className="Three-dot-edit-button">
-//                                 Edit
-//                               </button>
-//                               <button className="Three-dot-delete-button">
-//                                 Delete
-//                               </button>
-//                             </div>
-//                           )}
-//                         </div>
-//                       </Col>
-//                     </Row>
-//                   </Col>
-//                 </>
-//               );
-//             })}
-//           </Row>
-//         </Container>
-//         <div className="address-faPlus-screen">
-//           <Link to="/Address/GoogleMap">
-//             <FaPlus className="address-plus-whole-screen" />
-//           </Link>
-//         </div>
-//       </div>
-//       <div>
-//         <Foot />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Index;
-
-// jo data ma map sy ly rha hon ya uski coding ha
-
-import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Index.css";
 import { FaHome } from "react-icons/fa";
-import { RiMap2Fill } from "react-icons/ri";
-import { BsThreeDots } from "react-icons/bs";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Index";
-import { FaPlus } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
-import Foot from "../Foot/Index";
 
-const Index = ({
-  myaddress,
-  // selectedAddress,
-  setSelectedAddress,
-  handleEditAddress,
-  handleDeleteAddress,
-}) => {
-  const [isMenuVisible, setMenuVisible] = useState(false);
-  const location = useLocation();
-  const selectedAddress = location?.state?.selectedAddress;
-  const toggleMenu = () => {
-    setMenuVisible(!isMenuVisible);
+function ShowAddAddress() {
+  const ShowAddAddressName="Address"
+  const [addresses, setAddresses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedAddress, setSelectedAddress] = useState(null); // To store the selected address
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log("token in show_Add_Addrss", token);
+    if (!token) {
+      console.error("Token not available. Please authenticate.");
+      return;
+    }
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://cafescale.com/api/v1/customer/address/list",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setAddresses(response.data);
+        console.log(response.data);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleEditAddress = (addressId) => {
+    setSelectedAddress(addressId); // Set the selected address to be edited
+    navigate("/Cart/CheckOut"); // Redirect to the edit address page
   };
 
-  const address = [
-    {
-      Home: (
-        <div>
-          <FaHome className="address-starting-icon" />
-        </div>
-      ),
-      Name: "Home",
-      Location: "Quaid-i-Azam Campus Lahore, Lahore Punjab, Pakistan",
-      AddressIcon: (
-        <span className="adress-map-content">
-          <RiMap2Fill className="address-map-icon" />
-        </span>
-      ),
-      ThreeDotIcon: <BsThreeDots className="ms-lg-3 ms-md-3 m-0" />,
-    },
-  ];
+  const handleDeleteAddress = async (addressId) => {
+    try {
+      const token = localStorage.getItem("token");
+      await axios.delete(
+        `https://cafescale.com/api/v1/customer/address/delete?address_id=${addressId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      // Filter out the removed address from the addresses array
+      setAddresses((prevAddresses) =>
+        prevAddresses.filter((address) => address.id !== addressId)
+      );
+      setSelectedAddress(null); // Clear the selected address
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
-      <div className="Address-main-div">
-        <div>
-          <Header myaddress={myaddress} />
-        </div>
-        <br />
-        <br />
-        <br />
-        <Container className="address-main">
-          <Row className="address-main-row">
-            {selectedAddress && (
-              <>
-                <Col className="address-card-main-box">
-                  <Row className="address-card-row">
-                    <Col xs={1} className="address-main-icon">
-                      <span>{address[0].Home}</span>
-                    </Col>
-                    <Col xs={8} className="address-card-box">
-                      <div className="address-content-location">
-                        <h7 className="address-naming">
-                          {selectedAddress.Name}
-                        </h7>
-                        <br />
-                        <h7 className="address-location">
-                          {selectedAddress.Location}
-                        </h7>
-                      </div>
-                    </Col>
-                    <Col xs={3} className="Address-dot-icon-main p-0">
-                      <div className="Address-dot-icon">
-                        <span className="address-icon">
-                          {address[0].AddressIcon}
-                        </span>
-                        <span
-                          className="ThreeDot-icon ms-lg-1 ms-md-1 m-0 "
-                          onClick={toggleMenu}
-                        >
-                          {address[0].ThreeDotIcon}
-                        </span>
-                        {isMenuVisible && (
-                          <div className="Three-dot-menu">
-                            <button
-                              className="Three-dot-edit-button"
-                              onClick={handleEditAddress}
-                            >
-                              Edit
-                            </button>
-                            <button
-                              className="Three-dot-delete-button"
-                              onClick={handleDeleteAddress}
-                            >
-                              Delete
-                            </button>
+<div>
+
+<div>
+        <Header ShowAddAddressName={ShowAddAddressName} />{" "}
+      </div>
+      <br />
+      <br />
+      <br />
+
+</div>
+
+      <Container>
+        <Row>
+          <Col>
+            <div className="">
+              <h1>Address List</h1>
+              {addresses.length === 0 ? (
+                <p>List is empty</p>
+              ) : (
+                <>
+                  {loading ? <p>Loading...</p> : null}
+                  <ul>
+                    {addresses.map((addaddress) => (
+                      <li key={addaddress.id}>
+                        <div className="addaddressstyle my-2">
+                          <div className="addaddressstyle-div1">
+                            <FaHome />
+                            {addaddress.address}
+                            <Dropdown>
+                              <Dropdown.Toggle
+                              className="dropdown-split-style"
+                                id={`dropdown-split-${addaddress.id}`}
+                              />
+                              <Dropdown.Menu
+                                show={selectedAddress === addaddress.id}
+                              >
+                                <Dropdown.Item
+                                  onClick={() =>
+                                    handleDeleteAddress(addaddress.id)
+                                  }
+                                >
+                                  Delete
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                  variant="success"
+                                  onClick={() =>
+                                    handleEditAddress(addaddress.id)
+                                  }
+                                >
+                                  Edit
+                                </Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
                           </div>
-                        )}
-                      </div>
-                    </Col>
-                  </Row>
-                </Col>
-              </>
-            )}
-          </Row>
-        </Container>
-        <div className="address-faPlus-screen">
-          <Link to="/Address/GoogleMap">
-            <FaPlus className="address-plus-whole-screen" />
-          </Link>
-        </div>
-      </div>
-      <div>
-        <Foot />
-      </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
-};
+}
 
-export default Index;
+export default ShowAddAddress;

@@ -23,8 +23,7 @@ import SignUp from "./components/LoginDetail/Signup/Index";
 import ForgotPass from "./components/LoginDetail/ForgotPassword/Index";
 import Verification from "./components/LoginDetail/Verification/Index";
 import React from "react";
-// import Practice from "./components/Practice/Practice";
-// import { Switch } from "react-router-dom/cjs/react-router-dom.min";
+import Foot from "./components/Foot/Index";
 function App() {
   return (
     <>
@@ -48,6 +47,7 @@ function App() {
           <Route path="/Delete" element={<Delete2 />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Cart/CheckOut" element={<CheckOut />} />
+          
           <Route path="/Wallet" element={<Wallet />} />
           <Route path="/Address/GoogleMap" element={<GoogleMap />} />
           {/* <Route path="/Wallet/AddCardData" element={<Addcard />} /> */}

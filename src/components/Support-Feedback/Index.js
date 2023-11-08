@@ -64,9 +64,6 @@ const Index = (props) => {
           </Row>
         </Container>
       </div>
-      <div>
-        <Foot />
-      </div>
     </>
   );
 };

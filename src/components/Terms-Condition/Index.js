@@ -82,9 +82,7 @@ const Index = () => {
             </Col>
           </Row>
         </Container>
-        <Foot />
       </div>
-      <br />
     </>
   );
 };

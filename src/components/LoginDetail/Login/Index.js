@@ -34,7 +34,7 @@ const Index = () => {
       .post("/auth/login", values)
       .then((response) => {
         console.log(response.data.token);
-        localStorage.setItem("token",response.data.token)
+        localStorage.setItem("token", response.data.token);
         alert("Log in Successfully");
         navigate("/navbar");
       })
@@ -100,7 +100,7 @@ const Index = () => {
                             name="password"
                             as={FormControl}
                             placeholder="Enter your password"
-                            maxLength={8}
+                            // maxLength={8}
                             autoComplete="off"
                           />
                           <Button
@@ -192,9 +192,10 @@ const Index = () => {
                       {" "}
                       SignUp
                     </Link>
-                   <div>or </div> 
-                    <Link className="anchorforgot" to="/navbar">Continue as a Guest</Link>
-                    
+                    <div>or </div>
+                    <Link className="anchorforgot" to="/navbar">
+                      Continue as a Guest
+                    </Link>
                   </p>
                 </Form>
               )}

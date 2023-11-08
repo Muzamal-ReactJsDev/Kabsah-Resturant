@@ -1,6 +1,5 @@
 .check-out-main-div {
   background-color: rgb(239, 239, 239);
-  height: 100vh;
 }
 .main-branch-button {
   background-color: rgb(221, 153, 51);
@@ -113,4 +112,22 @@
 .listfont {
   font-weight: bold;
   color: red;
+}
+
+
+/*  */
+
+
+/* Example CSS styles for input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-field-payment {
+  /* Additional styles for payment input fields */
+  background-color: #f5f5f5;
+  color: #333;
 }

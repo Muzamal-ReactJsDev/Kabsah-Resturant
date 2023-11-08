@@ -72,12 +72,6 @@ const Index = ({ data }) => {
             </Grid> */}
           </Row>
         </Container>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Foot />
       </div>
     </>
   );

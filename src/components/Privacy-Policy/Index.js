@@ -76,9 +76,6 @@ const Index = () => {
           </Row>
         </Container>
       </div>
-      <div>
-        <Foot />
-      </div>
     </>
   );
 };

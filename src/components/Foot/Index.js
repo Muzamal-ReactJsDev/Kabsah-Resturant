@@ -5,8 +5,8 @@ import { AiFillCopyrightCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const Index = () => {
   return (
-    <div>
-      <Container fluid className="foot-main">
+    <div className="foot-main">
+      <Container >
         <Row className="p-4">
           <Col md={4} lg={4}>
             <h2 className="resturant-name">Kabsah Resturant</h2>

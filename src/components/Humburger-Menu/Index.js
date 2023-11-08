@@ -149,6 +149,8 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(!show); // Toggle the value of 'show'
   const { totalCount } = useSelector(cartDetails);
+  const ProfileName=localStorage.getItem('fullName');
+  const ProfileEmail=localStorage.getItem('email');
   return (
     <>
       <nav className={`navbar ${show ? "show-hamburger" : ""}`}>
@@ -211,9 +213,9 @@ const Navbar = () => {
                       alt=""
                     />
                     <div>
-                      <h6>Ali Raza</h6>
+                      <h6>{ProfileName}</h6>
                     </div>
-                    <div>razakaloka@gmail.com</div>
+                    <div>{ProfileEmail}</div>
                     <div>Point: 89</div>
                   </div>
                 </div>

@@ -24,7 +24,7 @@ const SignupForm = () => {
     phone: Yup.string()
       .matches(/^\(\d{3}\) \d{3}-\d{4}$/, "Invalid phone number")
       .required("Phone number is required"),
-    restaurant_id:Yup.string()
+    restaurant_id: Yup.string()
       .required("Restaurant ID is required")
       .nullable(),
     password: Yup.string().required("Password is required"),
@@ -35,12 +35,21 @@ const SignupForm = () => {
       .post("/auth/registration", values)
       .then((response) => {
         console.log(response.config.data);
-        alert("You are Registered Successfully❤😎")
-        navigate("/")
+        // here is use the parse to get the value from string......
+        const data = JSON.parse(response.config.data);
+        const fullName = `${data.f_name} ${data.l_name}`;
+        localStorage.setItem("fullName", fullName);
+        const email = data.email;
+        localStorage.setItem("email", email);
+        const PhoneNumber = data.phone;
+        localStorage.setItem("Phone", PhoneNumber);
+        alert("You are Registered Successfully❤😎");
+        // console.log(`First Name: ${fullName}`);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
-        alert("There is error in the data")
+        alert("There is error in the data");
       });
 
     resetForm();

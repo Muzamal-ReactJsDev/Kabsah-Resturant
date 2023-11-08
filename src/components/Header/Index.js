@@ -27,6 +27,7 @@ const Header = (props) => {
             {props.mpaddress}
             {props.CardData}
             {props.ForgotPassword}
+            {props.ShowAddAddressName}
           </h5>
         </Navbar.Text>
       </Container>
