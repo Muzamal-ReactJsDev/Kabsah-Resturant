@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Header/Index";
 
 function ShowAddAddress() {
-  const ShowAddAddressName="Address"
+  const ShowAddAddressName = "Address";
   const [addresses, setAddresses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedAddress, setSelectedAddress] = useState(null); // To store the selected address
@@ -71,16 +71,14 @@ function ShowAddAddress() {
 
   return (
     <>
-<div>
-
-<div>
-        <Header ShowAddAddressName={ShowAddAddressName} />{" "}
+      <div>
+        <div>
+          <Header ShowAddAddressName={ShowAddAddressName} />{" "}
+        </div>
+        <br />
+        <br />
+        <br />
       </div>
-      <br />
-      <br />
-      <br />
-
-</div>
 
       <Container>
         <Row>
@@ -101,7 +99,7 @@ function ShowAddAddress() {
                             {addaddress.address}
                             <Dropdown>
                               <Dropdown.Toggle
-                              className="dropdown-split-style"
+                                className="dropdown-split-style"
                                 id={`dropdown-split-${addaddress.id}`}
                               />
                               <Dropdown.Menu

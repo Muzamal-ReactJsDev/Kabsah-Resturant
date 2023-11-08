@@ -18,47 +18,6 @@ const Index = () => {
   const [cartItems, setCartItems] = useState([]);
   const { items } = useSelector(cartDetails);
   const dispatch = useDispatch();
-  
-  // console.log("cards", cards);
-  // const handleAddToCart = (image, name, price) => {
-  //   const existingItem = cartItems.find(
-  //     (item) =>
-  //       item.image === image && item.name === name && item.price === price
-  //   );
-  //   if (existingItem) {
-  //     const updatedItems = cartItems.map((item) =>
-  //       item === existingItem ? { ...item, quantity: item.quantity + 1 } : item
-  //     );
-  //     setCartItems(updatedItems);
-  //   } else {
-  //     const newItem = { image, name, price, quantity: 1 };
-  //     setCartItems([...cartItems, newItem]);
-  //   }
-  // };
-
-  // const handleRemoveFromCart = (image, name, price) => {
-  //   const existingItem = cartItems.find(
-  //     (item) =>
-  //       item.image === image && item.name === name && item.price === price
-  //   );
-
-  //   if (existingItem && existingItem.quantity > 1) {
-  //     const updatedItems = cartItems.map((item) =>
-  //       item === existingItem ? { ...item, quantity: item.quantity - 1 } : item
-  //     );
-  //     setCartItems(updatedItems);
-  //   } else {
-  //     const updatedItems = cartItems.filter(
-  //       (item) =>
-  //         item.image !== image || item.name !== name || item.price !== price
-  //     );
-  //     setCartItems(updatedItems);
-  //   }
-  // };
-
-  // const getTotalReceivedCount = () => {
-  //   return cartItems.reduce((total, item) => total + item.quantity, 0);
-  // };
 
   return (
     <>
