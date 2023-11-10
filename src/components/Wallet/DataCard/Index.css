@@ -1,8 +1,19 @@
+.nn {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+}
 .card-data-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+.payment-method-icons-delete {
+  color: red !important;
+  font-size: 30px;
+}
+.payment-method-icons-card {
+  color: black !important;
+  font-size: 30px;
 }
 .card-data-form-styling {
   width: 100% !important;
@@ -95,4 +106,15 @@
 .text-muted {
   margin-top: 0.25rem;
   font-size: 0.875rem;
+}
+
+.card-data-buttton:hover,
+.card-data-buttton:focus,
+.card-data-buttton:active,
+.card-data-buttton:focus-within {
+  margin-top: 5%;
+  width: 100%;
+  background-color: rgb(221, 153, 51) !important;
+  border: none;
+  font-weight: bold;
 }

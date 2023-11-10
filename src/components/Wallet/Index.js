@@ -1,31 +1,63 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Index.css";
-import { FaWallet, FaPlus } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+import { FaPlus } from "react-icons/fa";
+import { FaRegCreditCard } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
 import Header from "../Header/Index";
-import Foot from "../Foot/Index";
-// import Addcard from "./Addcarddata/Addcard";
 import { Link } from "react-router-dom";
-// import { Grid } from "@mui/material";
-const Index = ({ data }) => {
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
+const Index = () => {
   const walletname = "Wallet";
-  const wallet = [
-    {
-      Iconwallet: (
-        <span>
-          <FaWallet className="walletmain" />
-        </span>
-      ),
-      WalletName: "Visa",
-      WalletDetails: "4242*****4242",
-      WalletDelete: (
-        <span>
-          <MdDelete className="walletDelete" />
-        </span>
-      ),
-    },
-  ];
+  const [paymentCards, setPaymentCards] = useState([]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.error("Token not available. Please authenticate.");
+      return;
+    }
+
+    axios
+      .post(
+        "https://cafescale.com/api/v1/customer/paymentmethod/getPaymentCards",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((response) => {
+        setPaymentCards(response.data);
+        console.log("payment Id", response);
+      })
+      .catch((error) => {
+        console.error("Error in the Payment Card List", error);
+      });
+  }, []);
+
+  const handleDeleteAddress = async (cardId, paymentId) => {
+    console.log("Here is the ID to Deleted", cardId);
+    console.log("Here is the Payment ID", paymentId);
+    try {
+      const token = localStorage.getItem("token");
+      await axios.delete(
+        `https://cafescale.com/api/v1/customer/paymentmethod/deletePaymentMethods/${cardId}/${paymentId}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("After axios.delete - Request succeeded");
+    } catch (error) {
+      console.error("After axios.delete - Request failed", error);
+    }
+  };
+
   return (
     <>
       <div className="wallet-main-div-wallet">
@@ -36,45 +68,50 @@ const Index = ({ data }) => {
         <br />
         <br />
         <Container className="my-2" style={{ position: "relative" }}>
-          <Row>
-            {wallet.map((value, Index) => {
+          <Row className="muzamal">
+            {paymentCards.map((value) => {
               return (
-                <>
-                  <Col className="wallet-main-col-wallet">
-                    <Row className="wallet-main-row-wallet">
-                      <Col xs={2} className="wallet-icon-wallet">
-                        <div>{value.Iconwallet}</div>
-                      </Col>
-                      <Col xs={5} className="wallet-name-details">
-                        <div>
-                          <div>{value.WalletName}</div>
-                          <div>{data?.cardNumber}</div>
-                        </div>
-                      </Col>
-                      <Col xs={5} className="wallet-delete-icon">
-                        <div>{value.WalletDelete}</div>
-                      </Col>
-                    </Row>
-                  </Col>
-                </>
+                <Col
+                  key={value.id}
+                  xs={12}
+                  className="wallet-main-col-wallet my-3"
+                >
+                  <Row className="wallet-main-row-wallet">
+                    <Col xs={2} className="wallet-icon-wallet">
+                      <div>
+                        <FaRegCreditCard className="payment-method-icons-card" />
+                      </div>
+                    </Col>
+                    <Col xs={5} className="wallet-name-details">
+                      <div>
+                        <div>{value.customer_account}</div>
+                        <div>**************{value.card_no}</div>
+                      </div>
+                    </Col>
+                    <Col xs={5} className="wallet-delete-icon">
+                      <div
+                        onClick={() =>
+                          handleDeleteAddress(value.id, value.payment_id)
+                        }
+                      >
+                        {/* Adding onClick event to trigger deletion */}
+                        <AiFillDelete className="payment-method-icons-delete" />
+                      </div>
+                    </Col>
+                  </Row>
+                </Col>
               );
             })}
-            <div className="wallet-faPlus-screen">
-              <Link to="/Wallet/Data">
-                <FaPlus className="wallet-plus-whole-screen" />
-              </Link>
-            </div>
-            {/* <Grid sx={{ mt: 3}}>
-              <p>Card Name: {data?.cardName}</p>
-              <p>Card Number: {data?.cardNumber}</p>
-              <p>Expiry Date: {data?.expiry_date}</p>
-              <p>CVV: {data?.cvv}</p>
-            </Grid> */}
           </Row>
+
+          <div className="wallet-faPlus-screen">
+            <Link to="/Wallet/Data">
+              <FaPlus className="wallet-plus-whole-screen" />
+            </Link>
+          </div>
         </Container>
       </div>
     </>
   );
 };
-
 export default Index;

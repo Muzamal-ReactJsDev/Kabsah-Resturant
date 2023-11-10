@@ -108,14 +108,15 @@ const Index = () => {
             {" "}
             <CartDiscount />
           </Row>
-        </Container>
-        <Row>
+          <Row>
           <Col className="cart-button-row text-center">
             <Link type="button" to="/Cart/CheckOut" className="cart-button">
               Continue Checkout
             </Link>
           </Col>
         </Row>
+        </Container>
+       
       </div>
     </>
   );
