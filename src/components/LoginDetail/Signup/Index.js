@@ -36,13 +36,12 @@ const SignupForm = () => {
       .then((response) => {
         console.log(response.config.data);
         // here is use the parse to get the value from string......
-        const data = JSON.parse(response.config.data);
-        const fullName = `${data.f_name} ${data.l_name}`;
-        localStorage.setItem("fullName", fullName);
-        const email = data.email;
-        localStorage.setItem("email", email);
-        const PhoneNumber = data.phone;
-        localStorage.setItem("Phone", PhoneNumber);
+        // const data = JSON.parse(response.config.data);
+        // const fullName = `${data.f_name} ${data.l_name}`;
+        // localStorage.setItem("fullName", fullName);
+      
+        // const PhoneNumber = data.phone;
+        
         alert("You are Registered Successfully❤😎");
         // console.log(`First Name: ${fullName}`);
         navigate("/");

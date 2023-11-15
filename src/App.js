@@ -16,14 +16,14 @@ import Cart from "./components/Cart/Index";
 import CheckOut from "./components/Cart/Check-out/Index";
 import Wallet from "./components/Wallet/Index";
 import GoogleMap from "./components/Address/Google-map/Index";
-// import Addcard from "./components/Wallet/AddCardData/Index";
 import Data from "./components/Wallet/DataCard/Index";
 import Login from "./components/LoginDetail/Login/Index";
 import SignUp from "./components/LoginDetail/Signup/Index";
 import ForgotPass from "./components/LoginDetail/ForgotPassword/Index";
 import Verification from "./components/LoginDetail/Verification/Index";
+import Location from "./components/Location/Index";
 import React from "react";
-import Foot from "./components/Foot/Index";
+// import Foot from "./components/Foot/Index";
 function App() {
   return (
     <>
@@ -47,11 +47,12 @@ function App() {
           <Route path="/Delete" element={<Delete2 />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Cart/CheckOut" element={<CheckOut />} />
-          
+
           <Route path="/Wallet" element={<Wallet />} />
           <Route path="/Address/GoogleMap" element={<GoogleMap />} />
           {/* <Route path="/Wallet/AddCardData" element={<Addcard />} /> */}
           <Route path="/Wallet/Data" element={<Data />} />
+          <Route path="/choosestore" element={<Location />} />
         </Routes>
       </BrowserRouter>
     </>

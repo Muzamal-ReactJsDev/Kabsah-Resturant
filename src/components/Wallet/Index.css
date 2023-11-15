@@ -1,9 +1,13 @@
 .wallet-main-div-wallet {
   background-color: rgb(250, 250, 250);
   z-index: 0;
+  position: relative;
 }
 .muzamal {
-  position: relative;
+  justify-content: center;
+ 
+  display: flex;
+  align-items: center;
 }
 .walletmain {
   font-size: 28px;
@@ -13,13 +17,11 @@
   font-size: 28px;
 }
 .wallet-main-col-wallet {
-  /* position: relative; */
   background-color: rgb(244, 247, 252);
   border-radius: 10px;
 }
 .wallet-main-row-wallet {
-  /* position: relative; */
-  padding: 10px;
+  padding: 7%;
 }
 .wallet-icon-wallet {
   display: flex;
@@ -58,4 +60,27 @@
   display: flex;
   color: white;
   justify-content: center;
+}
+
+
+/* this is for the default Card... */
+
+/* Unique styles for default card */
+.default-card {
+  border: 2px solid #00ff00; /* Change border color as desired */
+}
+
+.default-card .card-wrapper {
+  position: relative;
+}
+
+.default-card .default-sign {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.default-card .default-sign .default-icon {
+  color: #00ff00; /* Change icon color as desired */
+  font-size: 24px;
 }

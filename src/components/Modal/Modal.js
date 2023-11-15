@@ -17,6 +17,7 @@ const CustomModal = ({
   price,
   description,
   selectedItem,
+  product_id, // Add product_id as a prop
 }) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
@@ -40,24 +41,35 @@ const CustomModal = ({
   const handleAmount = () => {
     return price * quantity;
   };
+
   const addToCartHandler = () => {
     dispatch(
       addCartItem({
-        selectedItem,
+        selectedItem: {
+          product_id, // Include product_id
+          image,
+          name,
+          price,
+        },
         quantity,
       })
     );
     handleClose();
   };
-  const removeFromCartHandler = () => {
-    dispatch(
-      RemoveCartItem({
-        selectedItem,
-        quantity,
-      })
-    );
-    handleClose();
-  };
+  // const removeFromCartHandler = () => {
+  //   dispatch(
+  //     RemoveCartItem({
+  //       selectedItem: {
+  //         product_id, // Include product_id
+  //         image,
+  //         name,
+  //         price,
+  //       },
+  //       quantity,
+  //     })
+  //   );
+  //   handleClose();
+  // };
   return (
     <>
       <Container>

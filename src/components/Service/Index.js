@@ -93,6 +93,15 @@ export const postApi = createApi({
         method: "GET",
       }),
     }),
+
+    // this is for the Branch Location.....
+    
+    getAllBranchesLocation: builder.query({
+      query: () => ({
+        url: `http://cafescale.site/api/v1/config?restaurant_id=8`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
@@ -106,5 +115,6 @@ export const {
   useGetAllBeveragesProductQuery,
   useGetAllGoogleMapLocationQuery,
   useGetAllStaffTipQuery,
+  useGetAllBranchesLocationQuery,
   // useGetNumberOfPostQuery,
 } = postApi;

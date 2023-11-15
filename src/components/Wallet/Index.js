@@ -31,7 +31,8 @@ const Index = () => {
       )
       .then((response) => {
         setPaymentCards(response.data);
-        console.log("payment Id", response);
+        console.log("payment Id", response.data[0].payment_id);
+        localStorage.setItem('payment_id',response.data[0].payment_id)
       })
       .catch((error) => {
         console.error("Error in the Payment Card List", error);
@@ -47,10 +48,16 @@ const Index = () => {
         `https://cafescale.com/api/v1/customer/paymentmethod/deletePaymentMethods/${cardId}/${paymentId}`,
         {
           headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         }
+      );
+
+      // Filter out the removed address from the addresses array
+      setPaymentCards((prevPaymentCards) =>
+        prevPaymentCards.filter(
+          (card) => card.id !== cardId && card.payment_id !== paymentId
+        )
       );
       console.log("After axios.delete - Request succeeded");
     } catch (error) {
@@ -67,14 +74,14 @@ const Index = () => {
         <br />
         <br />
         <br />
-        <Container className="my-2" style={{ position: "relative" }}>
+        <Container className="my-2">
           <Row className="muzamal">
             {paymentCards.map((value) => {
               return (
                 <Col
                   key={value.id}
-                  xs={12}
-                  className="wallet-main-col-wallet my-3"
+                  md={5}
+                  className="wallet-main-col-wallet my-3 ms-2"
                 >
                   <Row className="wallet-main-row-wallet">
                     <Col xs={2} className="wallet-icon-wallet">

@@ -39,11 +39,11 @@ const Index = () => {
           {!isLoading && !isLoading2 ? (
             <>
               <h5 className="sandwich">POPULAR ITEMS</h5>
-              {data?.products?.map((dataPopularItems, index) => (
+              {data?.products?.map((dataPopularItems, id) => (
                 <Col
                   xs={6}
                   className="for-sandwich"
-                  key={index}
+                  key={dataPopularItems.id}
                   onClick={() => handleShowModal(dataPopularItems)}
                 >
                   {/* this is for the Texting of Card */}
@@ -76,15 +76,18 @@ const Index = () => {
                   </Row>
                 </Col>
               ))}
-              <CustomModal
-                show={showModal}
-                handleClose={handleCloseModal}
-                image={`${data2?.base_urls?.product_image_url}/${selectedItem?.image}`}
-                name={selectedItem?.name}
-                price={selectedItem?.price}
-                description={selectedItem?.description}
-                selectedItem={selectedItem}
-              />
+              {selectedItem && ( // Render CustomModal only if selectedItem is not null
+                <CustomModal
+                  show={showModal}
+                  handleClose={handleCloseModal}
+                  image={`${data2?.base_urls?.product_image_url}/${selectedItem?.image}`}
+                  name={selectedItem?.name}
+                  price={selectedItem?.price}
+                  description={selectedItem?.description}
+                  selectedItem={selectedItem}
+                  product_id={selectedItem.id} // Include product_id
+                />
+              )}
             </>
           ) : (
             <h6>Loading....... Please Wait</h6>

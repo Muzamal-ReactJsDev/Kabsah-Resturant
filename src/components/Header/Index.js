@@ -28,6 +28,7 @@ const Header = (props) => {
             {props.CardData}
             {props.ForgotPassword}
             {props.ShowAddAddressName}
+            {props.storeValue}
           </h5>
         </Navbar.Text>
       </Container>

@@ -1,5 +1,3 @@
-// this is for the new api or /8 wali api
-
 import React, { useState } from "react";
 import "../Styling/Sandwich.css";
 import { FaRegHeart, FaPlus } from "react-icons/fa";
@@ -41,11 +39,11 @@ const Index = () => {
           {!isLoading && !isLoading2 ? (
             <>
               <h5 className="sandwich">{data[8]?.name}</h5>
-              {data[8]?.products?.map((dataDrinks, index) => (
+              {data[8]?.products?.map((dataDrinks, id) => (
                 <Col
                   xs={6}
                   className="for-sandwich"
-                  key={index}
+                  key={dataDrinks.id}
                   onClick={() => handleShowModal(dataDrinks)}
                 >
                   {/* this is for the Texting of Card */}
@@ -88,6 +86,7 @@ const Index = () => {
                   price={selectedItem?.price}
                   description={selectedItem?.description}
                   selectedItem={selectedItem}
+                  product_id={selectedItem.id} // Include product_id
                 />
               )}
             </>

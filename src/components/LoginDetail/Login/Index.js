@@ -34,6 +34,11 @@ const Index = () => {
       .post("/auth/login", values)
       .then((response) => {
         console.log(response.data.token);
+
+        localStorage.setItem("f_name", response.data.user.f_name);
+        localStorage.setItem("Point", response.data.user.point);
+        localStorage.setItem("Phone", response.data.user.phone);
+        localStorage.setItem("Email", response.data.user.email);
         localStorage.setItem("token", response.data.token);
         alert("Log in Successfully");
         navigate("/navbar");

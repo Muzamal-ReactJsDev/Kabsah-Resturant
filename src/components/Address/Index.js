@@ -31,7 +31,7 @@ function ShowAddAddress() {
           }
         );
         setAddresses(response.data);
-        console.log(response.data);
+        console.log(response.data, "Here is the List Added");
         setLoading(false);
       } catch (err) {
         console.log(err);
@@ -79,7 +79,6 @@ function ShowAddAddress() {
         <br />
         <br />
       </div>
-
       <Container>
         <Row>
           <Col>

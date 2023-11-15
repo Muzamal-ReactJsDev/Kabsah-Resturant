@@ -138,7 +138,7 @@ import {
 
 import { CgProfile } from "react-icons/cg";
 import { BiSupport } from "react-icons/bi";
-import { FaHome, FaMapMarkedAlt, FaWallet } from "react-icons/fa";
+import { FaHome, FaMapMarkedAlt, FaStore, FaWallet } from "react-icons/fa";
 import { SiIterm2 } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
@@ -149,8 +149,9 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(!show); // Toggle the value of 'show'
   const { totalCount } = useSelector(cartDetails);
-  const ProfileName=localStorage.getItem('fullName');
-  const ProfileEmail=localStorage.getItem('email');
+  const ProfileName=localStorage.getItem('f_name');
+  const ProfileEmail=localStorage.getItem('Email');
+  const ProfilePoint=localStorage.getItem('Point');
   return (
     <>
       <nav className={`navbar ${show ? "show-hamburger" : ""}`}>
@@ -216,7 +217,7 @@ const Navbar = () => {
                       <h6>{ProfileName}</h6>
                     </div>
                     <div>{ProfileEmail}</div>
-                    <div>Point: 89</div>
+                    <div>Point: {ProfilePoint}</div>
                   </div>
                 </div>
                 <br />
@@ -247,6 +248,13 @@ const Navbar = () => {
                     <Link to="/Address" className="hamburger-menu-style">
                       <FaMapMarkedAlt className="humburger-menu-icons" />{" "}
                       Address
+                    </Link>
+                  </li>
+                  <li>
+                    {" "}
+                    <Link to="/choosestore" className="hamburger-menu-style">
+                      <FaStore className="humburger-menu-icons" />{" "}
+                      Choose Store
                     </Link>
                   </li>
                   <li>

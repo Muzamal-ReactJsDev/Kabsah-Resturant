@@ -447,7 +447,7 @@ const App = () => {
                               }`}
                             >
                               <Field
-                                type="text"
+                                // type="number"
                                 name="cardExpiry"
                                 className="form-control"
                                 value={values.cardExpiry}
@@ -478,7 +478,7 @@ const App = () => {
                               }`}
                             >
                               <Field
-                                type="text"
+                                type="number"
                                 name="cvv"
                                 className="form-control"
                                 value={values.cvv}
@@ -505,6 +505,7 @@ const App = () => {
                         <FloatingLabel
                           controlId="cardHolder"
                           label="Card Holder"
+                          type="text"
                           className={`form-control ${
                             touched.cardHolder && errors.cardHolder
                               ? "is-invalid"
