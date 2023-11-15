@@ -32,6 +32,8 @@ function ShowAddAddress() {
         );
         setAddresses(response.data);
         console.log(response.data, "Here is the List Added");
+        localStorage.setItem("deliveryId", response.data[0].id);
+        localStorage.setItem("deliverytype", response.data[0].address_type);
         setLoading(false);
       } catch (err) {
         console.log(err);
