@@ -9,7 +9,7 @@ function PlaceOrder() {
     order_amount: 0,
     delivery_address_id: "",
     order_type: "",
-    branch_id: "",
+    branch_id: 10, //set it default 10
     delivery_time: "",
     delivery_date: "",
     distance: 0,
@@ -89,7 +89,7 @@ function PlaceOrder() {
         order_type: localStorage.getItem("deliverytype"),
         delivery_address_id: localStorage.getItem("deliveryId"),
         // branch_id: localStorage.getItem("Branch_id"),
-        branch_id: 10,
+        // branch_id: 10,
         cart: productIds,
       };
 
@@ -154,19 +154,7 @@ function PlaceOrder() {
             required
           />
         </div>
-        {/* <div>
-          <label>Payment Method:</label>
-          <select
-            name="payment_method"
-            value={formData.payment_method}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Payment Method</option>
-            <option value="credit_card">Stripe</option>
-            <option value="paypal">PayPal</option>
-          </select>
-        </div> */}
+
         <div>
           <button disabled={isLoading} type="submit">
             {isLoading

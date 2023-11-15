@@ -32,7 +32,7 @@ const Index = () => {
       .then((response) => {
         setPaymentCards(response.data);
         console.log("payment Id", response.data[0].payment_id);
-        localStorage.setItem('payment_id',response.data[0].payment_id)
+        localStorage.setItem("payment_id", response.data[0].payment_id);
       })
       .catch((error) => {
         console.error("Error in the Payment Card List", error);
