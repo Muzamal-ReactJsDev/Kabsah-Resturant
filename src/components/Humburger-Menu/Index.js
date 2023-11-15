@@ -149,9 +149,13 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(!show); // Toggle the value of 'show'
   const { totalCount } = useSelector(cartDetails);
-  const ProfileName=localStorage.getItem('f_name');
-  const ProfileEmail=localStorage.getItem('Email');
-  const ProfilePoint=localStorage.getItem('Point');
+  const ProfileName = localStorage.getItem("f_name");
+  const ProfileEmail = localStorage.getItem("Email");
+  const ProfilePoint = localStorage.getItem("Point");
+  function clearLocalStorage() {
+    localStorage.clear();
+    alert("You have been Logout")
+  }
   return (
     <>
       <nav className={`navbar ${show ? "show-hamburger" : ""}`}>
@@ -253,8 +257,7 @@ const Navbar = () => {
                   <li>
                     {" "}
                     <Link to="/choosestore" className="hamburger-menu-style">
-                      <FaStore className="humburger-menu-icons" />{" "}
-                      Choose Store
+                      <FaStore className="humburger-menu-icons" /> Choose Store
                     </Link>
                   </li>
                   <li>
@@ -300,7 +303,11 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="hamburger-menu-style">
+                    <Link
+                      to="/"
+                      onClick={clearLocalStorage}
+                      className="hamburger-menu-style"
+                    >
                       {" "}
                       <IoIosLogOut className="humburger-menu-icons" /> Logout
                     </Link>
