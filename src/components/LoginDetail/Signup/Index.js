@@ -10,15 +10,15 @@ import api from "../Api";
 const SignupForm = () => {
   const navigate = useNavigate();
   const initialValues = {
-    f_name: "",
+    FirstName: "",
     l_name: "",
     email: "",
     phone: "",
     restaurant_id: "",
-    password: "",
+    Password: "",
   };
   const validationSchema = Yup.object().shape({
-    f_name: Yup.string().required("First name is required"),
+    FirstName: Yup.string().required("First name is required"),
     l_name: Yup.string().required("Last name is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
     phone: Yup.string()
@@ -27,7 +27,7 @@ const SignupForm = () => {
     restaurant_id: Yup.string()
       .required("Restaurant ID is required")
       .nullable(),
-    password: Yup.string().required("Password is required"),
+    Password: Yup.string().required("Password is required"),
   });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -37,7 +37,7 @@ const SignupForm = () => {
         console.log(response.config.data);
         // here is use the parse to get the value from string......
         // const data = JSON.parse(response.config.data);
-        // const fullName = `${data.f_name} ${data.l_name}`;
+        // const fullName = `${data.FirstName} ${data.l_name}`;
         // localStorage.setItem("fullName", fullName);
       
         // const PhoneNumber = data.phone;
@@ -73,18 +73,18 @@ const SignupForm = () => {
                 <Row>
                   <Col xs={12}>
                     <div className="form-group">
-                      <label htmlFor="f_name">First Name</label>
+                      <label htmlFor="FirstName">First Name</label>
                       <Field
                         type="text"
-                        name="f_name"
-                        id="f_name"
+                        name="FirstName"
+                        id="FirstName"
                         placeholder="Enter the First Name"
                         className={`form-control ${
-                          errors.f_name && touched.f_name ? "is-invalid" : ""
+                          errors.FirstName && touched.FirstName ? "is-invalid" : ""
                         }`}
                       />
                       <ErrorMessage
-                        name="f_name"
+                        name="FirstName"
                         component="div"
                         className="invalid-feedback"
                       />
@@ -191,20 +191,20 @@ const SignupForm = () => {
                 <Row>
                   <Col xs={12}>
                     <div className="form-group">
-                      <label htmlFor="password">Password</label>
+                      <label htmlFor="Password">Password</label>
                       <Field
                         placeholder="Enter Your Password"
-                        type="password"
-                        name="password"
-                        id="password"
+                        type="Password"
+                        name="Password"
+                        id="Password"
                         className={`form-control ${
-                          errors.password && touched.password
+                          errors.Password && touched.Password
                             ? "is-invalid"
                             : ""
                         }`}
                       />
                       <ErrorMessage
-                        name="password"
+                        name="Password"
                         component="div"
                         className="invalid-feedback"
                       />

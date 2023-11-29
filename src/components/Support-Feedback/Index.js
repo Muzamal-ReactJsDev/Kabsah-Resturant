@@ -5,8 +5,19 @@ import Logo from "../Images/Help and support.png";
 import { MdLocationOn } from "react-icons/md";
 import Header from "../Header/Index";
 import Foot from "../Foot/Index";
+import { Link } from "react-router-dom";
+
 const Index = (props) => {
   const support = "Help & Support";
+  // Retrieve restaurant address from localStorage
+  const restAddress =
+    localStorage.getItem("Branch_address") || "No address found";
+
+  // Function to handle phone call
+  const handlePhoneCall = () => {
+    window.location.href = "tel:(763) 208-0643";
+  };
+
   return (
     <>
       <div className="support-main-div">
@@ -27,13 +38,11 @@ const Index = (props) => {
                 <Card.Body>
                   <Card.Title>
                     <h5 className="cart-resturent-address">
-                      <MdLocationOn className="cart-locationmark" /> Resturent
+                      <MdLocationOn className="cart-locationmark" /> Restaurant
                       Address
                     </h5>
                   </Card.Title>
-                  <Card.Text className="cardtext">
-                    2022 NORTHDALE BOULEVARD W COON RAPIDS, MN 55433
-                  </Card.Text>
+                  <Card.Text className="cardtext">{restAddress}</Card.Text>
                   <hr className="cart-card-line" />
                 </Card.Body>
                 <Row className="cart-card-btn">
@@ -44,6 +53,7 @@ const Index = (props) => {
                         backgroundColor: "white",
                         width: "100%",
                       }}
+                      onClick={handlePhoneCall} // Call the function to initiate the call
                     >
                       Call Now
                     </Button>

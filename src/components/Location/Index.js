@@ -13,6 +13,8 @@ const Index = () => {
   localStorage.setItem("latitude_1", data?.branches[0].latitude);
   localStorage.setItem("longitude_1", data?.branches[0].longitude);
   localStorage.setItem("Branch_id", data?.branches[0].id);
+  localStorage.setItem("Branches_address", data?.restaurant_address);
+
   return (
     <>
       <div>

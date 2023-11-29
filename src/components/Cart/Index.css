@@ -57,7 +57,9 @@
 .cart-count-value-minus,
 .cart-count-value-plus {
   cursor: pointer;
-  /* font-size: 10px; */
+  font-weight: bold;
+  border: 1px solid gray;
+  background-color: white !important;
 }
 /* .cart-delete-icon {
   color: red;

@@ -60,7 +60,7 @@ const Index = () => {
         )
       );
       console.log("After axios.delete - Request succeeded");
-    } catch (error) {
+    }catch (error) {
       console.error("After axios.delete - Request failed", error);
     }
   };

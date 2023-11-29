@@ -10,6 +10,7 @@ export const postApi = createApi({
 
     getAllPost: builder.query({
       query: () => ({
+        // url: `/api/v1/categories/allproducts/8`,
         url: `/api/v1/categories/allproducts/8`,
         method: "GET",
       }),
@@ -95,7 +96,7 @@ export const postApi = createApi({
     }),
 
     // this is for the Branch Location.....
-    
+
     getAllBranchesLocation: builder.query({
       query: () => ({
         url: `http://cafescale.site/api/v1/config?restaurant_id=8`,
