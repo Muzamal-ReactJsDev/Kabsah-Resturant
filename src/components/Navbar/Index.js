@@ -25,7 +25,8 @@ const index = () => {
       <br />
       <br />
       <div className="pt-3" style={{ backgroundColor: "rgb(250, 250, 250)" }}>
-        <Home />
+        {/* <h1>Muzamal</h1>
+        <Home /> */}
         {/* This is for the Slider */}
         <Sliders />
 

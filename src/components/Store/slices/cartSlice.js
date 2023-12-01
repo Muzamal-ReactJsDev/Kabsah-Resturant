@@ -129,7 +129,8 @@ const TotalAmt = (items) => {
   return sum;
 };
 const ini = {
-  totalCount: storedTotalCount, // Initialize with totalCount from local storage
+  // totalCount: storedTotalCount, // Initialize with totalCount from local storage
+  totalCount: storedCartItems.length > 0 ? storedTotalCount : 0,
   items: storedCartItems, // Initialize with items from local storage
   totalPrice: storedTotalPrice, // Initialize with totalPrice from local storage
 };
