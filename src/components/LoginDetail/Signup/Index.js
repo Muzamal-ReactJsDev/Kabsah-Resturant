@@ -10,15 +10,15 @@ import api from "../Api";
 const SignupForm = () => {
   const navigate = useNavigate();
   const initialValues = {
-    FirstName: "",
+    f_name: "",
     l_name: "",
     email: "",
     phone: "",
     restaurant_id: "",
-    Password: "",
+    password: "",
   };
   const validationSchema = Yup.object().shape({
-    FirstName: Yup.string().required("First name is required"),
+    f_name: Yup.string().required("First name is required"),
     l_name: Yup.string().required("Last name is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
     phone: Yup.string()
@@ -27,7 +27,7 @@ const SignupForm = () => {
     restaurant_id: Yup.string()
       .required("Restaurant ID is required")
       .nullable(),
-    Password: Yup.string().required("Password is required"),
+    password: Yup.string().required("password is required"),
   });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -76,11 +76,11 @@ const SignupForm = () => {
                       <label htmlFor="FirstName">First Name</label>
                       <Field
                         type="text"
-                        name="FirstName"
-                        id="FirstName"
+                        name="f_name"
+                        id="f_name"
                         placeholder="Enter the First Name"
                         className={`form-control ${
-                          errors.FirstName && touched.FirstName ? "is-invalid" : ""
+                          errors.f_name && touched.f_name ? "is-invalid" : ""
                         }`}
                       />
                       <ErrorMessage
@@ -191,20 +191,20 @@ const SignupForm = () => {
                 <Row>
                   <Col xs={12}>
                     <div className="form-group">
-                      <label htmlFor="Password">Password</label>
+                      <label htmlFor="password">password</label>
                       <Field
-                        placeholder="Enter Your Password"
-                        type="Password"
-                        name="Password"
-                        id="Password"
+                        placeholder="Enter Your password"
+                        type="password"
+                        name="password"
+                        id="password"
                         className={`form-control ${
-                          errors.Password && touched.Password
+                          errors.password && touched.password
                             ? "is-invalid"
                             : ""
                         }`}
                       />
                       <ErrorMessage
-                        name="Password"
+                        name="password"
                         component="div"
                         className="invalid-feedback"
                       />

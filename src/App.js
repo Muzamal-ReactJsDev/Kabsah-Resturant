@@ -47,7 +47,7 @@ function App() {
           <Route path="/Delete" element={<Delete2 />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Cart/CheckOut" element={<CheckOut />} />
-
+          <Route path="/Address/CheckOut" element={<CheckOut />} />
           <Route path="/Wallet" element={<Wallet />} />
           <Route path="/Address/GoogleMap" element={<GoogleMap />} />
           {/* <Route path="/Wallet/AddCardData" element={<Addcard />} /> */}

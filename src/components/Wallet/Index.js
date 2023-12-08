@@ -92,7 +92,7 @@ const Index = () => {
                     <Col xs={5} className="wallet-name-details">
                       <div>
                         <div>{value.customer_account}</div>
-                        <div>**************{value.card_no}</div>
+                        <div>************{value.card_no}</div>
                       </div>
                     </Col>
                     <Col xs={5} className="wallet-delete-icon">

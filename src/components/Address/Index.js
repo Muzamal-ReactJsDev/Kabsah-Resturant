@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Index.css";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaPlus } from "react-icons/fa";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../Header/Index";
 
 function ShowAddAddress() {
@@ -80,7 +80,7 @@ function ShowAddAddress() {
         <br />
         <br />
         <br />
-      </div>
+      
       <Container>
         <Row>
           <Col>
@@ -134,6 +134,12 @@ function ShowAddAddress() {
           </Col>
         </Row>
       </Container>
+       <div className="wallet-faPlus-screen">
+            <Link to="/Address/CheckOut">
+              <FaPlus className="wallet-plus-whole-screen" />
+            </Link>
+          </div>
+      </div>
     </>
   );
 }
